@@ -112,6 +112,7 @@
 @layer base {
   html {
     -webkit-tap-highlight-color: transparent;
+    background: var(--background);
   }
   body {
     background: var(--background);

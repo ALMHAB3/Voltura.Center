@@ -23,7 +23,7 @@ export function EntityForm({
     if (state?.ok && resetOnSuccess) ref.current?.reset();
   }, [state, resetOnSuccess]);
   return (
-    <form ref={ref} action={formAction} className="grid gap-4 sm:grid-cols-2">
+    <form ref={ref} action={formAction} className="grid grid-cols-1 gap-4 sm:grid-cols-2">
       {children}
       {state && (
         <div className="sm:col-span-2">

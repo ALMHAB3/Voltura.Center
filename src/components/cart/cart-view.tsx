@@ -16,7 +16,7 @@ export function CartView() {
 
   if (loading && !items.length && lines.length) {
     return (
-      <div className="grid gap-6 lg:grid-cols-[1fr_360px]" aria-busy="true">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1fr_360px]" aria-busy="true">
         <div className="flex flex-col gap-3">
           {lines.map((l) => (
             <Skeleton key={l.productId} className="h-32" />
@@ -41,7 +41,7 @@ export function CartView() {
   }
 
   return (
-    <div className="grid items-start gap-6 lg:grid-cols-[1fr_360px]">
+    <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[1fr_360px]">
       <ul className="flex flex-col gap-3">
         {items.map(({ product, quantity }) => {
           const over = quantity > product.stock;

@@ -59,7 +59,7 @@ export function AddressForm({ cities, onDone }: { cities: City[]; onDone?: () =>
           }
         }),
       )}
-      className="grid gap-4 sm:grid-cols-2"
+      className="grid grid-cols-1 gap-4 sm:grid-cols-2"
     >
       <Field label="اسم العنوان" htmlFor="a-label" error={e.label?.message}>
         <Input id="a-label" placeholder="المنزل، العمل…" {...register("label")} />

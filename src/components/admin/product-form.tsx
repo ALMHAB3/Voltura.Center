@@ -63,10 +63,10 @@ export function ProductForm({
   const roots = categories.filter((c) => !c.parent_id);
 
   return (
-    <form onSubmit={onSubmit} noValidate className="grid items-start gap-6 xl:grid-cols-[1.6fr_1fr]">
+    <form onSubmit={onSubmit} noValidate className="grid grid-cols-1 items-start gap-6 xl:grid-cols-[1.6fr_1fr]">
       <div className="flex flex-col gap-6">
         <Panel title="بيانات المنتج">
-          <div className="grid gap-4 p-4 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2">
             <Field label="اسم المنتج" htmlFor="name" error={e.name?.message} className="sm:col-span-2">
               <Input
                 id="name"
@@ -148,7 +148,7 @@ export function ProductForm({
 
       <div className="flex flex-col gap-6 xl:sticky xl:top-6">
         <Panel title="السعر والمخزون">
-          <div className="grid gap-4 p-4 sm:grid-cols-2 xl:grid-cols-1">
+          <div className="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 xl:grid-cols-1">
             <Field label="السعر (د.ل)" htmlFor="price" error={e.price?.message}>
               <Input id="price" inputMode="numeric" className="num" {...register("price")} />
             </Field>

@@ -24,7 +24,7 @@ export function TrackForm() {
         const parsed = trackSchema.parse(v);
         router.push(`/track?order=${encodeURIComponent(parsed.orderNumber.toUpperCase())}&phone=${parsed.phone}`);
       })}
-      className="grid gap-4 sm:grid-cols-[1fr_1fr_auto] sm:items-end"
+      className="grid grid-cols-1 gap-4 sm:grid-cols-[1fr_1fr_auto] sm:items-end"
     >
       <Field label="رقم الطلب" htmlFor="orderNumber" error={formState.errors.orderNumber?.message}>
         <Input id="orderNumber" dir="ltr" className="num text-end uppercase" {...register("orderNumber")} />

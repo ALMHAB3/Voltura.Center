@@ -89,7 +89,7 @@ export default async function ProductPage({ params }: PageProps<"/product/[slug]
         ]}
       />
 
-      <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
         <Gallery images={product.product_images} name={product.name} />
 
         <div className="flex flex-col gap-5">
@@ -166,7 +166,7 @@ export default async function ProductPage({ params }: PageProps<"/product/[slug]
         </div>
       </div>
 
-      <div className="mt-12 grid gap-8 lg:grid-cols-[1.3fr_1fr]">
+      <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-[1.3fr_1fr]">
         <section className="rounded-3xl border border-border bg-surface p-5 sm:p-6">
           <h2 className="mb-4 text-xl font-bold">الوصف والمواصفات</h2>
           {product.description && <p className="mb-5 whitespace-pre-line text-sm leading-7 text-muted">{product.description}</p>}

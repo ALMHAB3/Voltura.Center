@@ -49,7 +49,7 @@ export function Panel({ title, children, className, actions }: { title?: string;
 export function Table({ children }: { children: ReactNode }) {
   return (
     <div className="overflow-x-auto">
-      <table className="w-full min-w-[640px] text-sm [&_td]:px-4 [&_td]:py-3 [&_th]:px-4 [&_th]:py-2.5 [&_th]:text-start [&_th]:text-xs [&_th]:font-semibold [&_th]:text-muted [&_thead]:bg-surface-2 [&_tbody_tr]:border-t [&_tbody_tr]:border-border">
+      <table className="w-full min-w-[640px] text-sm [&_td]:px-4 [&_td]:py-3 [&_td.num]:whitespace-nowrap [&_th]:px-4 [&_th]:py-2.5 [&_th]:text-start [&_th]:text-xs [&_th]:font-semibold [&_th]:text-muted [&_thead]:bg-surface-2 [&_tbody_tr]:border-t [&_tbody_tr]:border-border">
         {children}
       </table>
     </div>

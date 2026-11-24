@@ -11,7 +11,7 @@ export default async function AdminLayout({ children }: LayoutProps<"/admin">) {
   const { profile } = await requireAdmin();
   return (
     <div className="min-h-dvh lg:grid lg:grid-cols-[240px_1fr]">
-      <aside className="bg-ink-gradient text-ink-foreground lg:sticky lg:top-0 lg:h-dvh lg:overflow-y-auto">
+      <aside className="min-w-0 bg-ink-gradient text-ink-foreground lg:sticky lg:top-0 lg:h-dvh lg:overflow-y-auto">
         <div className="flex items-center justify-between gap-3 px-4 py-4">
           <Logo />
           <ThemeToggle className="flex size-9 items-center justify-center rounded-lg hover:bg-white/10" />

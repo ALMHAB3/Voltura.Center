@@ -98,7 +98,7 @@ export function OrderDetails({ order }: { order: OrderSummary }) {
           <dd>{formatPrice(order.total)}</dd>
         </div>
       </dl>
-      <dl className="grid gap-3 text-sm sm:grid-cols-2">
+      <dl className="grid grid-cols-1 gap-3 text-sm sm:grid-cols-2">
         <div>
           <dt className="text-xs text-muted">المستلم</dt>
           <dd className="font-semibold">{order.customer_name}</dd>

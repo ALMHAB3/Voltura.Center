@@ -94,7 +94,7 @@ export function RegisterForm({ next }: { next: string }) {
       <Field label="البريد الإلكتروني" htmlFor="reg-email" error={e.email?.message}>
         <Input id="reg-email" type="email" dir="ltr" autoComplete="email" className="text-end" {...register("email")} />
       </Field>
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <Field label="كلمة المرور" htmlFor="reg-password" error={e.password?.message}>
           <Input id="reg-password" type="password" dir="ltr" autoComplete="new-password" className="text-end" {...register("password")} />
         </Field>

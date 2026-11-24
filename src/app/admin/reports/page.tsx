@@ -91,7 +91,7 @@ export default async function ReportsPage({ searchParams }: PageProps<"/admin/re
         <StatCard label="رسوم التوصيل المحصّلة" value={formatPrice(r.delivery_fees)} hint={`${formatNumber(r.cancelled_count)} طلب ملغي في الفترة`} />
       </div>
 
-      <div className="mt-6 grid gap-6 xl:grid-cols-[1.4fr_1fr]">
+      <div className="mt-6 grid grid-cols-1 gap-6 xl:grid-cols-[1.4fr_1fr]">
         <Panel title="المبيعات حسب اليوم">
           <Table>
             <thead>

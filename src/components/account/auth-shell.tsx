@@ -4,7 +4,7 @@ import { BadgeCheck, Truck, Wallet } from "lucide-react";
 
 export function AuthShell({ title, subtitle, children, footer }: { title: string; subtitle?: string; children: ReactNode; footer?: ReactNode }) {
   return (
-    <div className="mx-auto grid max-w-5xl gap-0 overflow-hidden px-4 pt-8 lg:grid-cols-2 lg:px-6">
+    <div className="mx-auto grid grid-cols-1 max-w-5xl gap-0 overflow-hidden px-4 pt-8 lg:grid-cols-2 lg:px-6">
       <div className="hidden flex-col justify-between rounded-s-3xl bg-ink-gradient p-10 text-ink-foreground lg:flex">
         <Image src="/brand/logo-full.png" alt="" width={532} height={485} className="h-32 w-auto self-start" />
         <div>

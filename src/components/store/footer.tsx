@@ -18,7 +18,7 @@ export async function Footer() {
   const tree = await getCategoryTree();
   return (
     <footer className="mt-16 bg-ink-gradient pb-20 text-ink-foreground sm:pb-0">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr] lg:px-6">
+      <div className="mx-auto grid grid-cols-1 max-w-7xl gap-10 px-4 py-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr] lg:px-6">
         <div className="flex flex-col gap-4">
           <Image src="/brand/logo-full.png" alt={site.name} width={532} height={485} className="h-24 w-auto self-start" />
           <p className="max-w-xs text-sm leading-7 text-ink-muted">{site.tagline}.</p>

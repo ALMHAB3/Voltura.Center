@@ -107,7 +107,7 @@ export function CheckoutForm({
   }
 
   return (
-    <form onSubmit={onSubmit} noValidate className="grid items-start gap-6 lg:grid-cols-[1fr_400px]">
+    <form onSubmit={onSubmit} noValidate className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[1fr_400px]">
       <div className="flex flex-col gap-6">
         <section className="rounded-2xl border border-border bg-surface p-5">
           <h2 className="mb-4 text-lg font-bold">بيانات التوصيل</h2>
@@ -130,7 +130,7 @@ export function CheckoutForm({
               ))}
             </div>
           )}
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <Field label="الاسم الكامل" htmlFor="customerName" error={errors.customerName?.message}>
               <Input id="customerName" autoComplete="name" aria-invalid={!!errors.customerName} {...register("customerName")} />
             </Field>
@@ -163,7 +163,7 @@ export function CheckoutForm({
 
         <section className="rounded-2xl border border-border bg-surface p-5">
           <h2 className="mb-4 text-lg font-bold">طريقة الدفع</h2>
-          <div className="grid gap-2.5 sm:grid-cols-2" role="radiogroup" aria-label="طريقة الدفع">
+          <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2" role="radiogroup" aria-label="طريقة الدفع">
             {(Object.keys(paymentMethods) as PaymentMethod[]).map((key) => {
               const Icon = paymentIcons[key];
               const active = payment === key;

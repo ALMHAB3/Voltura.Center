@@ -14,7 +14,7 @@ export function AddressList({ addresses, cities }: { addresses: Address[]; citie
   const [pending, start] = useTransition();
   return (
     <div className="flex flex-col gap-4">
-      <ul className="grid gap-3 sm:grid-cols-2">
+      <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         {addresses.map((a) => (
           <li key={a.id} className="flex flex-col gap-2 rounded-2xl border border-border bg-surface p-4">
             <div className="flex items-center justify-between">

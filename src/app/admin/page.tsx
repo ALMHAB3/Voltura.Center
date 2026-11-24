@@ -34,7 +34,7 @@ export default async function AdminHome() {
         <StatCard label="طلبات بانتظار التأكيد" value={formatNumber(pending)} tone={pending ? "warning" : undefined} hint={<Link href="/admin/orders?status=pending" className="text-primary-strong">عرضها</Link>} />
       </div>
 
-      <div className="mt-6 grid gap-6 xl:grid-cols-[1.6fr_1fr]">
+      <div className="mt-6 grid grid-cols-1 gap-6 xl:grid-cols-[1.6fr_1fr]">
         <Panel title="أحدث الطلبات" actions={<Link href="/admin/orders" className="text-sm font-semibold text-primary-strong">كل الطلبات</Link>}>
           <Table>
             <thead>

@@ -26,8 +26,8 @@ export default function ContactPage() {
       <Breadcrumbs items={[{ label: "تواصل معنا" }]} />
       <h1 className="text-2xl font-bold sm:text-3xl">تواصل معنا</h1>
       <p className="mt-2 text-muted">نرد على واتساب بأسرع وقت خلال ساعات العمل.</p>
-      <div className="mt-6 grid gap-6 lg:grid-cols-2">
-        <ul className="grid gap-3 sm:grid-cols-2">
+      <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-2">
+        <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           {channels.map(({ icon: Icon, label, value, href, ltr }) => (
             <li key={label} className="flex items-center gap-3 rounded-2xl border border-border bg-surface p-4">
               <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-ink text-primary">

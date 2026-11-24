@@ -14,7 +14,7 @@ export default async function AccountLayout({ children }: { children: React.Reac
           <p className="text-lg font-bold">{profile?.full_name ?? user.email}</p>
         </div>
       </div>
-      <div className="grid gap-6 lg:grid-cols-[220px_1fr]">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[220px_1fr]">
         <aside>
           <AccountNav isAdmin={isAdmin} />
         </aside>

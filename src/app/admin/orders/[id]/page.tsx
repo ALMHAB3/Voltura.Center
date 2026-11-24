@@ -32,7 +32,7 @@ export default async function AdminOrderPage({ params }: PageProps<"/admin/order
         description={formatDateTime(order.created_at)}
         actions={<StatusBadge status={order.status} />}
       />
-      <div className="grid gap-6 xl:grid-cols-[1.5fr_1fr]">
+      <div className="grid grid-cols-1 gap-6 xl:grid-cols-[1.5fr_1fr]">
         <div className="flex flex-col gap-6">
           <Panel title="المنتجات">
             <Table>
@@ -59,7 +59,7 @@ export default async function AdminOrderPage({ params }: PageProps<"/admin/order
                 ))}
               </tbody>
             </Table>
-            <dl className="num grid gap-2 border-t border-border p-4 text-sm sm:grid-cols-2">
+            <dl className="num grid grid-cols-1 gap-2 border-t border-border p-4 text-sm sm:grid-cols-2">
               <div className="flex justify-between"><dt className="text-muted">المجموع قبل الخصم</dt><dd>{formatPrice(order.subtotal)}</dd></div>
               <div className="flex justify-between"><dt className="text-muted">خصم المنتجات</dt><dd>- {formatPrice(order.product_discount)}</dd></div>
               <div className="flex justify-between"><dt className="text-muted">كوبون {order.coupon_code ?? ""}</dt><dd>- {formatPrice(order.coupon_discount)}</dd></div>
