@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+/* Dark mode follows the `dark` class on <html> (set from the visitor's choice or system setting). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+  Voltura Center brand tokens, taken from the logo:
+  deep navy #0C1F2E, night #07051A, teal #0F3C41, signal cyan #87F1FE.
+  Components use only these semantic names (bg-surface, text-primary, …), never raw colours.
+*/
+:root {
+  --background: #f3f7f8;
+  --surface: #ffffff;
+  --surface-2: #e9f1f3;
+  --foreground: #0c1f2e;
+  --muted: #557080;
+  --border: #d6e3e7;
+  --primary: #87f1fe;            /* brand cyan: buttons, highlights */
+  --primary-hover: #5ee6f7;
+  --primary-foreground: #07131d; /* text on cyan */
+  --primary-strong: #0a7e8f;     /* cyan darkened for text/links on light surfaces */
+  --ink: #0c1f2e;                /* header, footer, dark bands */
+  --ink-2: #0f3c41;
+  --ink-3: #07051a;
+  --ink-foreground: #eaf6f8;
+  --ink-muted: #9bb8c2;
+  --sale: #e5484d;
+  --sale-foreground: #ffffff;
+  --success: #1f9d61;
+  --warning: #c27c0e;
+  --info: #0a7e8f;
+  --danger: #d93036;
+  --ring: #0a7e8f;
+  --shadow: 12 31 46;
+}
+
+:root.dark {
+  --background: #07111a;
+  --surface: #0c1b26;
+  --surface-2: #112634;
+  --foreground: #e6f2f5;
+  --muted: #8ea9b4;
+  --border: #1d3646;
+  --primary: #87f1fe;
+  --primary-hover: #b0f6ff;
+  --primary-foreground: #07131d;
+  --primary-strong: #87f1fe;
+  --ink: #060f17;
+  --ink-2: #0b2a30;
+  --ink-3: #04030f;
+  --ink-foreground: #eaf6f8;
+  --ink-muted: #8ea9b4;
+  --sale: #ff6369;
+  --sale-foreground: #1b0405;
+  --success: #3dd68c;
+  --warning: #f1a10d;
+  --info: #87f1fe;
+  --danger: #ff6369;
+  --ring: #87f1fe;
+  --shadow: 0 0 0;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-strong: var(--primary-strong);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-ink-foreground: var(--ink-foreground);
+  --color-ink-muted: var(--ink-muted);
+  --color-sale: var(--sale);
+  --color-sale-foreground: var(--sale-foreground);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-info: var(--info);
+  --color-danger: var(--danger);
+  --color-ring: var(--ring);
+
+  --font-sans: var(--font-body), "Segoe UI", Tahoma, sans-serif;
+  --font-display: var(--font-heading), var(--font-body), "Segoe UI", Tahoma, sans-serif;
+
+  --shadow-card: 0 1px 2px rgb(var(--shadow) / 0.06), 0 8px 24px -12px rgb(var(--shadow) / 0.18);
+  --shadow-pop: 0 18px 50px -12px rgb(var(--shadow) / 0.35);
+
+  --animate-fade-in: fade-in 0.2s ease-out;
+  --animate-slide-in-start: slide-in-start 0.25s ease-out;
+  --animate-pulse-ring: pulse-ring 1.6s ease-out infinite;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes slide-in-start {
+  from { transform: translateX(100%); }
+  to { transform: none; }
+}
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgb(37 211 102 / 0.45); }
+  100% { box-shadow: 0 0 0 16px rgb(37 211 102 / 0); }
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "tnum" 0;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+  ::selection {
+    background: var(--primary);
+    color: var(--primary-foreground);
+  }
+}
+
+@layer utilities {
+  .num {
+    font-family: var(--font-display);
+    font-variant-numeric: tabular-nums;
+  }
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  .bg-ink-gradient {
+    background-image: linear-gradient(90deg, var(--ink-3), var(--ink) 45%, var(--ink-2));
+  }
+  [dir="rtl"] .bg-ink-gradient {
+    background-image: linear-gradient(270deg, var(--ink-3), var(--ink) 45%, var(--ink-2));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
