@@ -243,7 +243,7 @@ export async function getListingFacets(categorySlug?: string) {
         }))
     : [];
 
-  const prices = rows.map((r) => r.sale_price);
+  const prices = rows.map((r) => r.sale_price ?? 0);
   return {
     brands: brands.filter((b) => brandIds.has(b.id)),
     specs,

@@ -63,7 +63,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body className="min-h-dvh antialiased">
-        <CartProvider isSignedIn={Boolean(current)} initialItems={serverCart}>
+        <CartProvider key={current?.user.id ?? "guest"} isSignedIn={Boolean(current)} initialItems={serverCart}>
           {children}
           <Toaster />
         </CartProvider>
